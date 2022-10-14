@@ -17,7 +17,7 @@ from kivymd.app import MDApp
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.bottomsheet import MDListBottomSheet
 from kivymd.uix.banner import MDBanner
-from kivymd.uix.toolbar import MDToolbar
+from kivymd.uix.toolbar import MDTopAppBar
 # from plyer import vibrator
 from android.runnable import run_on_ui_thread
 from jnius import autoclass
@@ -64,7 +64,7 @@ class Custom(FloatLayout):
         self.bmi_text = f"[color=311B92]Your BMI is [b]{self.bmi}[/b][/color]" if main_app.theme == "purple" else f"[color=263238]Your BMI is [b]{self.bmi}[/b][/color]"
         self.ban = MDBanner(opening_transition="in_elastic", type="two-line", id="banner", text=[
                             self.bmi_text, self.advice], vertical_pad=Window.size[0]/8, over_widget=self.parent.parent.parent.parent,)
-        self.tool = MDToolbar(id="toolbar", pos_hint={"top": 1}, elevation=0)
+        self.tool = MDTopAppBar(id="toolbar", pos_hint={"top": 1}, elevation=0)
         self.parent.parent.parent.parent.parent.add_widget(self.ban)
         self.ban.show()
 
